@@ -2,6 +2,7 @@ NAME = push_swap
 SRCS = main.c\
 	   parsing.c\
 	   stack.c\
+	   quick_sort.c\
 	   utils.c\
 	   error.c
 

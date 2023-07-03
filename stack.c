@@ -37,10 +37,9 @@ void print_list(t_stack *stack)
 
 	while(stack != NULL)
 	{
-		printf("[%d] ", stack->value);
+		printf("[%d] ", stack->index);
 		stack = stack->next;
 	}
-
 	printf("\n");
 }
 /*--------------------------------------------*/
@@ -56,6 +55,28 @@ t_stack *put_in_a(t_stack *a, char **argv)
         i++;
     }
     return (a);
+}
+
+void    put_index_in_a(t_stack *a, char **argv)
+{
+    char    **copy;
+    int     len;
+    int     i;
+    int     j;
+
+    copy = argv;
+    len = len_tab(argv);
+    i = 0;
+    while (i < len)
+    {
+        j = 0;
+        while (j < len)
+        {
+            if ()
+            j++;
+        }
+        i++;
+    }
 }
 
 void	clear_list(t_stack *stack)

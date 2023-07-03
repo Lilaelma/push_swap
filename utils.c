@@ -23,6 +23,16 @@ int ft_strlen(char *str)
     return (i);
 }
 
+int	len_tab(char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (argv[i])
+		i++;
+	return (i);
+}
+
 int	ft_atoi(char *str)
 {
 	int	sign;

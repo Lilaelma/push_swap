@@ -30,7 +30,8 @@ Bool is_empty_list(t_stack *stack);
 t_stack *push_back(t_stack *a, int value);
 void print_list(t_stack *stack);
 t_stack *put_in_a(t_stack *a, char **argv);
-t_stack *pop_front_list(t_stack *stack);
 void    clear_list(t_stack *stack);
+
+void quickSort(int *arr, int low, int high);
 
 #endif

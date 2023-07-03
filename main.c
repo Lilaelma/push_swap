@@ -9,6 +9,11 @@ int	main(int argc, char **argv)
 	a = NULL;
 	a = put_in_a(a, argv + 1);
 	print_list(a);
+	put_index_in_a(a, argv + 1);
+
+
+
+
 	clear_list(a);
 	return (0);
 }
