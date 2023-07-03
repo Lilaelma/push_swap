@@ -6,7 +6,6 @@ void is_digit(char *digit)
     int i;
 
     i = 0;
-    printf("OK\n");
     if (!digit[i])
         print_error();
     while (digit[i])

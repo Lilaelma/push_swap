@@ -1,13 +1,14 @@
 NAME = push_swap
 SRCS = main.c\
 	   parsing.c\
+	   stack.c\
 	   utils.c\
 	   error.c
 
 OBJS = ${SRCS:.c=.o}
 DEPS = ${SRCS:.c=.d}
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -MMD -MP
+CFLAGS = -Wall -Werror -Wextra -MMD -MP -g ################################
 RM = rm -rf
 
 all : $(NAME)
