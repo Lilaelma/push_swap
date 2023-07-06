@@ -6,8 +6,7 @@ void swap(int *a, int *b)
     *a = *b;
     *b = t;
 }
- 
-// Partition the array using the last element as the pivot
+
 int partition(int *arr, int low, int high)
 {
     int pivot;

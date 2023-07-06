@@ -34,13 +34,43 @@ void print_list(t_stack *stack)
 		printf("Rien a afficher, la Liste est vide.\n");
 		return;
 	}
+    printf("stack  : ");
+	while(stack != NULL)
+	{
+		printf("[%d] ", stack->value);
+		stack = stack->next;
+	}
+	printf("\n");
+}
 
+void    print_index(t_stack *stack)
+{
+    if(is_empty_list(stack))
+	{
+		printf("Rien a afficher, la Liste est vide.\n");
+		return;
+	}
+    printf("index  : ");
 	while(stack != NULL)
 	{
 		printf("[%d] ", stack->index);
 		stack = stack->next;
 	}
 	printf("\n");
+}
+
+void    print_tab(int *tab, int len)
+{
+    int i;
+
+    printf("sorted : ");
+    i = 0;
+    while (i < len)
+    {
+        printf("[%d] ", tab[i]);
+        i++;
+    }
+    printf("\n");
 }
 /*--------------------------------------------*/
 
@@ -57,26 +87,33 @@ t_stack *put_in_a(t_stack *a, char **argv)
     return (a);
 }
 
-void    put_index_in_a(t_stack *a, char **argv)
+t_stack *put_index_in_a(t_stack *a, char **argv, int len_tab)
 {
-    char    **copy;
-    int     len;
+    t_stack *temp;
+    int     *tab;
+    int     *sorted;
     int     i;
     int     j;
-
-    copy = argv;
-    len = len_tab(argv);
+    
+    tab = trans_to_int(argv, len_tab);
+    sorted = trans_to_int(argv, len_tab);
+    quickSort(sorted, 0, len_tab - 1);
+    temp = a;
     i = 0;
-    while (i < len)
+    while (i < len_tab)
     {
         j = 0;
-        while (j < len)
-        {
-            if ()
+        while (sorted[j] != tab[i])
             j++;
-        }
+        printf("i : %d | j : %d\n", i, j);
+        temp->index = j;
+        temp = temp->next;
         i++;
     }
+    print_tab(sorted, len_tab);
+    free(tab);
+    free(sorted);
+    return (a);
 }
 
 void	clear_list(t_stack *stack)

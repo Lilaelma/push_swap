@@ -23,16 +23,6 @@ int ft_strlen(char *str)
     return (i);
 }
 
-int	len_tab(char **argv)
-{
-	int	i;
-
-	i = 0;
-	while (argv[i])
-		i++;
-	return (i);
-}
-
 int	ft_atoi(char *str)
 {
 	int	sign;
@@ -57,4 +47,21 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (sign * res);
+}
+
+int	*trans_to_int(char **argv, int len_tab)
+{
+	int	*tab;
+	int i;
+
+	tab = malloc(len_tab);
+	if (!tab)
+		return (exit(1), NULL);
+	i = 0;
+	while (argv[i])
+	{
+		tab[i] = ft_atoi(argv[i]);
+		i++;
+	}
+	return (tab);
 }

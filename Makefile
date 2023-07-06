@@ -9,7 +9,7 @@ SRCS = main.c\
 OBJS = ${SRCS:.c=.o}
 DEPS = ${SRCS:.c=.d}
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -MMD -MP -g ################################
+CFLAGS = -Wall -Werror -Wextra -MMD -MP -g3
 RM = rm -rf
 
 all : $(NAME)
