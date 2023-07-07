@@ -2,6 +2,7 @@ NAME = push_swap
 SRCS = main.c\
 	   parsing.c\
 	   stack.c\
+	   is_sorted.c\
 	   quick_sort.c\
 	   utils.c\
 	   error.c
@@ -9,7 +10,7 @@ SRCS = main.c\
 OBJS = ${SRCS:.c=.o}
 DEPS = ${SRCS:.c=.d}
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -MMD -MP -g3
+CFLAGS = -Wall -Werror -Wextra -MMD -MP
 RM = rm -rf
 
 all : $(NAME)

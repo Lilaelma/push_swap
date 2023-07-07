@@ -87,7 +87,7 @@ t_stack *put_in_a(t_stack *a, char **argv)
     return (a);
 }
 
-t_stack *put_index_in_a(t_stack *a, char **argv, int len_tab)
+void    put_index_in_a(t_stack *a, char **argv, int len_tab)
 {
     t_stack *temp;
     int     *tab;
@@ -105,7 +105,6 @@ t_stack *put_index_in_a(t_stack *a, char **argv, int len_tab)
         j = 0;
         while (sorted[j] != tab[i])
             j++;
-        printf("i : %d | j : %d\n", i, j);
         temp->index = j;
         temp = temp->next;
         i++;
@@ -113,7 +112,6 @@ t_stack *put_index_in_a(t_stack *a, char **argv, int len_tab)
     print_tab(sorted, len_tab);
     free(tab);
     free(sorted);
-    return (a);
 }
 
 void	clear_list(t_stack *stack)

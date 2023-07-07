@@ -54,7 +54,7 @@ int	*trans_to_int(char **argv, int len_tab)
 	int	*tab;
 	int i;
 
-	tab = malloc(len_tab);
+	tab = malloc(sizeof(int) * len_tab);
 	if (!tab)
 		return (exit(1), NULL);
 	i = 0;
