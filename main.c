@@ -13,7 +13,7 @@ int	main(int argc, char **argv)
 	put_index_in_a(a, argv + 1, argc - 1);
 	print_list(a);
 	print_index(a);
-	printf("%d", stack_is_sorted(a));
+	printf("%d\n", stack_is_sorted(a));
 	clear_list(a);
 	return (0);
 }

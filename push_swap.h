@@ -6,12 +6,6 @@
 
 # include <stdio.h> //////////////////////////////
 
-typedef enum
-{
-	false,
-	true
-}   Bool;
-
 typedef struct s_stack
 {
     int value;
@@ -25,7 +19,7 @@ int ft_strcmp(char *s1, char *s2);
 int ft_strlen(char *str);
 int	ft_atoi(char *str);
 int	*trans_to_int(char **argv, int len_tab);
-Bool is_empty_list(t_stack *stack);
+int is_empty_list(t_stack *stack);
 t_stack *push_back(t_stack *a, int value);
 void print_list(t_stack *stack);    /////////////////////////////
 void    print_index(t_stack *stack);/////////////////////////////

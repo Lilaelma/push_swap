@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-Bool is_empty_list(t_stack *stack)
+int is_empty_list(t_stack *stack)
 {
 	if(stack == NULL)
-		return true;
-	return false;
+		return 1;
+	return 0;
 }
 
 t_stack *push_back(t_stack *a, int value)
