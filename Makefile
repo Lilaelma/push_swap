@@ -3,6 +3,7 @@ SRCS = main.c\
 	   parsing.c\
 	   stack.c\
 	   is_sorted.c\
+	   contrainte.c\
 	   quick_sort.c\
 	   utils.c\
 	   error.c

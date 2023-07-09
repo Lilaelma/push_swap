@@ -19,8 +19,9 @@ int ft_strcmp(char *s1, char *s2);
 int ft_strlen(char *str);
 int	ft_atoi(char *str);
 int	*trans_to_int(char **argv, int len_tab);
-int is_empty_list(t_stack *stack);
-t_stack *push_back(t_stack *a, int value);
+t_stack	*ft_last_lst(t_stack *stack);
+t_stack *push_front(t_stack *stack, int value);
+t_stack *push_back(t_stack *stack, int value);
 void print_list(t_stack *stack);    /////////////////////////////
 void    print_index(t_stack *stack);/////////////////////////////
 t_stack *put_in_a(t_stack *a, char **argv);
@@ -28,5 +29,9 @@ void    put_index_in_a(t_stack *a, char **argv, int len_tab);
 void    clear_list(t_stack *stack);
 int stack_is_sorted(t_stack *a);
 void quickSort(int *arr, int low, int high);
+void    pa(t_stack *a, t_stack *b);
+void    pb(t_stack *a, t_stack *b);
+void    sa(t_stack *a);
+void    ra(t_stack *a);
 
 #endif

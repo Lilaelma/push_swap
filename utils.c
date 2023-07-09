@@ -65,3 +65,10 @@ int	*trans_to_int(char **argv, int len_tab)
 	}
 	return (tab);
 }
+
+t_stack	*ft_last_lst(t_stack *stack)
+{
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
+}

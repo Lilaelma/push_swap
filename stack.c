@@ -1,13 +1,18 @@
 #include "push_swap.h"
 
-int is_empty_list(t_stack *stack)
+t_stack *push_front(t_stack *stack, int value)
 {
-	if(stack == NULL)
-		return 1;
-	return 0;
+    t_stack *element;
+
+    element = malloc(sizeof(*element));
+    if (!element)
+        exit(1);
+    element->value = value;
+    element->next = stack;
+    return (element);
 }
 
-t_stack *push_back(t_stack *a, int value)
+t_stack *push_back(t_stack *stack, int value)
 {
     t_stack *element;
     t_stack *temp;
@@ -17,19 +22,19 @@ t_stack *push_back(t_stack *a, int value)
         exit(1);
     element->value = value;
     element->next = NULL;
-    if(is_empty_list(a))
+    if(stack == NULL)
         return (element);
-    temp = a;
+    temp = stack;
     while (temp->next != NULL)
         temp = temp->next;
     temp->next = element;
-    return (a);
+    return (stack);
 }
 
 /*-------------------------------------------*/
 void print_list(t_stack *stack)
 {
-	if(is_empty_list(stack))
+	if(stack == NULL)
 	{
 		printf("Rien a afficher, la Liste est vide.\n");
 		return;
@@ -45,7 +50,7 @@ void print_list(t_stack *stack)
 
 void    print_index(t_stack *stack)
 {
-    if(is_empty_list(stack))
+    if(stack == NULL)
 	{
 		printf("Rien a afficher, la Liste est vide.\n");
 		return;
