@@ -7,7 +7,7 @@ int stack_is_sorted(t_stack *a)
     temp = a;
     while (temp->next)
     {
-        if (temp->value > temp->next->value)
+        if (temp->index > temp->next->index)
             return (0);
         temp = temp->next;
     }

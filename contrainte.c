@@ -1,46 +1,69 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-void    pa(t_stack *a, t_stack *b)
+void    pa(t_stack **a, t_stack **b)
 {
-    t_stack *element;
+    t_stack	*src;
+	t_stack	*dst;
 
-    if (b == NULL)
-        return ;
-    push_front(a, b->value);
-    element = b;
-    b = b->next;
-    element->next = NULL;
-    free(element);
+	src = *b;
+	dst = *a;
+	*b = src->next;
+	src->next = dst;
+	*a = src;
+    write(1, "pa\n", 3);
 }
 
-void    pb(t_stack *a, t_stack *b)
+void    pb(t_stack **a, t_stack **b)
 {
-    t_stack *element;
+    t_stack	*src;
+	t_stack	*dst;
 
-    if (a == NULL)
-        return ;
-    push_front(b, a->value);
-    element = a;
-    a = a->next;
-    element->next = NULL;
-    free(element);
+	src = *a;
+	dst = *b;
+	*a = src->next;
+	src->next = dst;
+	*b = src;
+    write(1, "pb\n", 3);
 }
 
-void    sa(t_stack *a)
+void    sa(t_stack **a)
 {
-    int val;
-    int id;
+    t_stack *temp_a;
+    t_stack *tmp;
 
-    id = a->index;
-    val = a->value;
-    a->index = a->next->index;
-    a->value = a->next->value;
-    a->next->index = id;
-    a->next->value = val;
+    temp_a = *a;
+    tmp = temp_a->next;
+    temp_a->next = temp_a->next->next;
+    tmp->next = temp_a;
+    *a = tmp;
+    write(1, "sa\n", 3);
 }
 
-void    ra(t_stack *a)
+void    ra(t_stack **a)
 {
-    (void)a;
+    t_stack *temp_a;
+    t_stack *tmp;
+
+    temp_a = *a;
+    *a = temp_a->next;
+    tmp = ft_last_lst(temp_a);
+    tmp->next = temp_a;
+    temp_a->next = NULL;
+    write(1, "ra\n", 3);
+}
+
+void    rra(t_stack **a)
+{
+    t_stack	*temp_a;
+	t_stack	*tmp;
+
+	temp_a = *a;
+	while (temp_a->next->next != NULL)
+		temp_a = temp_a->next;
+	tmp = temp_a->next;
+	tmp->next = *a;
+	*a = tmp;
+	temp_a->next = NULL;
+    write(1, "rra\n", 4);
 }

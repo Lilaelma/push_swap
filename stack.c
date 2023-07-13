@@ -114,7 +114,6 @@ void    put_index_in_a(t_stack *a, char **argv, int len_tab)
         temp = temp->next;
         i++;
     }
-    print_tab(sorted, len_tab);
     free(tab);
     free(sorted);
 }

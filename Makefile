@@ -5,6 +5,10 @@ SRCS = main.c\
 	   is_sorted.c\
 	   contrainte.c\
 	   quick_sort.c\
+	   short_sort.c\
+	   radix.c\
+	   sorting.c\
+	   lst_utils.c\
 	   utils.c\
 	   error.c
 

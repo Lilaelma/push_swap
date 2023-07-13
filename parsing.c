@@ -28,10 +28,11 @@ void    is_doublon(char **argv)
     i = 0;
     while (argv[i])
     {
+        
         j = i + 1;
         while (argv[j])
         {
-            if (ft_strcmp(argv[i], argv[j]))
+            if (!ft_strcmp(argv[i], argv[j]))
                 print_error();
             j++;
         }
