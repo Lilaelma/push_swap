@@ -6,30 +6,30 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:55:50 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/13 16:55:51 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:32:59 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    int	i;
- 
- 	i = 0;
- 	while (s1[i] == s2[i] && s1[i] && s2[i])
- 		i++;
- 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 int	ft_atoi(char *str)
@@ -61,7 +61,7 @@ int	ft_atoi(char *str)
 int	*trans_to_int(char **argv, int len_tab)
 {
 	int	*tab;
-	int i;
+	int	i;
 
 	tab = malloc(sizeof(int) * len_tab);
 	if (!tab)

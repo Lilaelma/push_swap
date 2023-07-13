@@ -6,14 +6,14 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:54:43 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/13 16:54:44 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:16:37 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    print_error(void)
+void	print_error(void)
 {
-    write(2, "Error\n", 6);
-    exit(1);
+	write(2, "Error\n", 6);
+	exit(1);
 }

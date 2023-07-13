@@ -6,16 +6,16 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:54:29 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/13 16:54:30 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:15:55 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void    pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b)
 {
-    t_stack	*src;
+	t_stack	*src;
 	t_stack	*dst;
 
 	src = *b;
@@ -23,12 +23,12 @@ void    pa(t_stack **a, t_stack **b)
 	*b = src->next;
 	src->next = dst;
 	*a = src;
-    write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
-void    pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b)
 {
-    t_stack	*src;
+	t_stack	*src;
 	t_stack	*dst;
 
 	src = *a;
@@ -36,38 +36,38 @@ void    pb(t_stack **a, t_stack **b)
 	*a = src->next;
 	src->next = dst;
 	*b = src;
-    write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }
 
-void    sa(t_stack **a)
+void	sa(t_stack **a)
 {
-    t_stack *temp_a;
-    t_stack *tmp;
+	t_stack	*temp_a;
+	t_stack	*tmp;
 
-    temp_a = *a;
-    tmp = temp_a->next;
-    temp_a->next = temp_a->next->next;
-    tmp->next = temp_a;
-    *a = tmp;
-    write(1, "sa\n", 3);
+	temp_a = *a;
+	tmp = temp_a->next;
+	temp_a->next = temp_a->next->next;
+	tmp->next = temp_a;
+	*a = tmp;
+	write(1, "sa\n", 3);
 }
 
-void    ra(t_stack **a)
+void	ra(t_stack **a)
 {
-    t_stack *temp_a;
-    t_stack *tmp;
+	t_stack	*temp_a;
+	t_stack	*tmp;
 
-    temp_a = *a;
-    *a = temp_a->next;
-    tmp = ft_last_lst(temp_a);
-    tmp->next = temp_a;
-    temp_a->next = NULL;
-    write(1, "ra\n", 3);
+	temp_a = *a;
+	*a = temp_a->next;
+	tmp = ft_last_lst(temp_a);
+	tmp->next = temp_a;
+	temp_a->next = NULL;
+	write(1, "ra\n", 3);
 }
 
-void    rra(t_stack **a)
+void	rra(t_stack **a)
 {
-    t_stack	*temp_a;
+	t_stack	*temp_a;
 	t_stack	*tmp;
 
 	temp_a = *a;
@@ -77,5 +77,5 @@ void    rra(t_stack **a)
 	tmp->next = *a;
 	*a = tmp;
 	temp_a->next = NULL;
-    write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }
