@@ -4,8 +4,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-# include <stdio.h> //////////////////////////////
-
 typedef struct s_stack
 {
     int value;
@@ -22,8 +20,6 @@ int	*trans_to_int(char **argv, int len_tab);
 t_stack	*ft_last_lst(t_stack *stack);
 t_stack *push_front(t_stack *stack, int value);
 t_stack *push_back(t_stack *stack, int value);
-void print_list(t_stack *stack);    /////////////////////////////
-void    print_index(t_stack *stack);/////////////////////////////
 t_stack *put_in_a(t_stack *a, char **argv);
 void    put_index_in_a(t_stack *a, char **argv, int len_tab);
 void    clear_list(t_stack *stack);
