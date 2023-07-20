@@ -10,6 +10,8 @@ SRCS = main.c\
 	   sorting.c\
 	   lst_utils.c\
 	   utils.c\
+	   utils_bis.c\
+	   utils_ter.c\
 	   error.c
 
 OBJS = ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:54:57 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/13 17:19:37 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/16 08:58:23 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,11 @@ void	push_elem(t_stack **a, t_stack **b, t_stack *elem, int len)
 	pb(&temp_a, &temp_b);
 	*a = temp_a;
 	*b = temp_b;
+}
+
+t_stack	*ft_last_lst(t_stack *stack)
+{
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }

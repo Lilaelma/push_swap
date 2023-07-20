@@ -6,7 +6,7 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:08:36 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/13 17:26:24 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/16 11:45:21 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,9 @@ void	three_sort(t_stack **stack);
 void	four_sort(t_stack **a, t_stack **b, int argc);
 void	five_sort(t_stack **a, t_stack **b, int argc);
 void	radix_sort(t_stack **a, t_stack **b, int len);
+char	*ft_strjoin(char *s1, char *s2);
+char	**ft_split(char *s, char c);
+int		ft_len_tab(char **tab);
+void	*free_tab(char **tab);
 
 #endif

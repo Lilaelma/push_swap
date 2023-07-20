@@ -6,7 +6,7 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:55:10 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/13 17:21:44 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/16 13:17:55 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,43 @@ void	is_doublon(char **argv)
 	}
 }
 
+/*---------------------------------------------*/
+
+void	print_tab(char **tab)
+{
+	int i;
+
+	i = 0;
+	while (tab[i])
+	{
+		printf("%s", tab[i]);
+		i++;
+	}
+}
+
+/*---------------------------------------------*/
+
 int	parsing(char **argv)
 {
 	int	i;
+	char *str;
+	char **tab;
 
 	i = 0;
-	is_doublon(argv);
+	str = NULL;
 	while (argv[i])
+		str = ft_strjoin(str, argv[i++]);
+	tab = ft_split(str, ' ');
+	free(str);
+	i = 0;
+	while (tab[i])
 	{
-		if (ft_strlen(argv[i]) > 11)
+		if (ft_strlen(tab[i]) > 11)
 			print_error();
-		is_digit(argv[i]);
+		is_digit(tab[i]);
 		i++;
 	}
+	is_doublon(tab);
+	free_tab(tab);
 	return (1);
 }
