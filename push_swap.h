@@ -6,7 +6,7 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:08:36 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/16 11:45:21 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/23 17:47:01 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 }				t_stack;
 
 int		parsing(char **argv);
-void	print_error(void);
+void	print_error(char **tab);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strlen(char *str);
 int		ft_atoi(char *str);

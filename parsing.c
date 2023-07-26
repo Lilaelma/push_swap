@@ -6,30 +6,31 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:55:10 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/16 11:39:54 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/23 17:50:05 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	is_digit(char *digit)
+int	is_digit(char *digit)
 {
 	int	i;
 
 	i = 0;
 	if (!digit[i])
-		print_error();
+		return (1);
 	while (digit[i])
 	{
 		if (digit[i] != '+' && digit[i] != '-'
 			&& (digit[i] < '0' || digit[i] > '9'))
-			print_error();
+			return (1);
 		if ((digit[i] == '+' || digit[i] == '-')
 			&& (digit[i + 1] < '0' || digit[i + 1] > '9'))
-			print_error();
+			return (1);
 		i++;
 	}
+	return (0);
 }
 
 void	is_doublon(char **argv)
@@ -44,7 +45,7 @@ void	is_doublon(char **argv)
 		while (argv[j])
 		{
 			if (!ft_strcmp(argv[i], argv[j]))
-				print_error();
+				print_error(argv);
 			j++;
 		}
 		i++;
@@ -78,15 +79,14 @@ int	parsing(char **argv)
 	while (argv[i])
 		str = ft_strjoin(str, argv[i++]);
 	tab = ft_split(str, ' ');
-	printf("ok : %s\n", str);
-	print_tab(tab);
 	free(str);
 	i = 0;
 	while (tab[i])
 	{
 		if (ft_strlen(tab[i]) > 11)
-			print_error();
-		is_digit(tab[i]);
+			print_error(tab);
+		if (is_digit(tab[i]))
+			print_error(tab);
 		i++;
 	}
 	is_doublon(tab);
