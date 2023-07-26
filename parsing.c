@@ -6,7 +6,7 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 16:55:10 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/16 13:17:55 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/07/16 11:39:54 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ int	parsing(char **argv)
 	while (argv[i])
 		str = ft_strjoin(str, argv[i++]);
 	tab = ft_split(str, ' ');
+	printf("ok : %s\n", str);
+	print_tab(tab);
 	free(str);
 	i = 0;
 	while (tab[i])
