@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 16:55:50 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/16 10:46:05 by aclarenn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 int	ft_strcmp(char *s1, char *s2)
@@ -22,7 +10,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -34,29 +22,29 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_atoi(char *str)
+long int	ft_atol(char *str)
 {
-	int	sign;
-	int	res;
-	int	i;
+	long int	res;
+	int			sign;
+	int			i;
 
 	i = 0;
 	res = 0;
 	sign = 1;
+	if (!str)
+		exit(write(2, "Error\n", 6));
 	while (str[i] == ' ' || (9 <= str[i] && str[i] <= 13))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
+		if (str[i + 1] < '0' || '9' < str[i + 1])
+			return (2147483648);
 		if (str[i] == '-')
 			sign *= -1;
 		i++;
 	}
 	while ('0' <= str[i] && str[i] <= '9')
-	{
-		res *= 10;
-		res += (str[i] - '0');
-		i++;
-	}
+		res = (res * 10) + (str[i++] - '0');
 	return (sign * res);
 }
 
@@ -71,7 +59,7 @@ int	*trans_to_int(char **argv, int len_tab)
 	i = 0;
 	while (argv[i])
 	{
-		tab[i] = ft_atoi(argv[i]);
+		tab[i] = ft_atol(argv[i]);
 		i++;
 	}
 	return (tab);

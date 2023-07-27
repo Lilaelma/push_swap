@@ -1,29 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 16:55:04 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/16 11:42:46 by aclarenn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+char **transform_tab(char **argv)
 {
-	t_stack	*a;
-	t_stack	*b;
-	char 	*str;
-	char 	**tab;
+	char	**tab;
+	char	*str;
 	int		i;
 
-	if (argc == 1 || parsing(argv + 1) == 0)
-		return (1);
-	b = NULL;
-	a = NULL;
 	str = NULL;
 	i = 0;
 	while (argv[i])
@@ -33,6 +15,20 @@ int	main(int argc, char **argv)
 	}
 	tab = ft_split(str, ' ');
 	free(str);
+	return (tab);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	*a;
+	t_stack	*b;
+	char	**tab;
+
+	if (argc == 1 || argc == 2 || parsing(argv + 1) == 0)
+		return (1);
+	a = NULL;
+	b = NULL;
+	tab = transform_tab(argv + 1);
 	a = put_in_a(a, tab);
 	put_index_in_a(a, tab, ft_len_tab(tab));
 	if (stack_is_sorted(a))

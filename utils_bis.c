@@ -14,7 +14,7 @@ void	*free_tab(char **tab)
 	return (NULL);
 }
 
-static int	get_nb_word(char const *s, char c)
+int	get_nb_word(char const *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -32,7 +32,7 @@ static int	get_nb_word(char const *s, char c)
 	return (len);
 }
 
-static char	*take_word(const char *s, char c)
+char	*take_word(const char *s, char c)
 {
 	int		i;
 	int		j;
@@ -58,7 +58,7 @@ static char	*take_word(const char *s, char c)
 	return (word);
 }
 
-static char	**test_protect(char const *s, char c)
+char	**test_protect(char const *s, char c)
 {
 	char	**tab;
 

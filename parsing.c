@@ -1,17 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 16:55:10 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/23 17:50:05 by aclarenn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-#include <stdio.h>
+
+long int	*transform_tab_long(char **argv)
+{
+	long int	*tab;
+	int			i;
+
+	tab = (long int *)malloc(sizeof(long) * ft_len_tab(argv) + 1);
+	if (!tab)
+		return (NULL);
+	i = 0;
+	while (argv[i])
+	{
+		tab[i] = ft_atol(argv[i]);
+		i++;
+	}
+	return (tab);
+}
 
 int	is_digit(char *digit)
 {
@@ -45,48 +49,33 @@ void	is_doublon(char **argv)
 		while (argv[j])
 		{
 			if (!ft_strcmp(argv[i], argv[j]))
-				print_error(argv);
+				exit_error(argv);
 			j++;
 		}
 		i++;
 	}
 }
 
-/*---------------------------------------------*/
-
-void	print_tab(char **tab)
-{
-	int i;
-
-	i = 0;
-	while (tab[i])
-	{
-		printf("%s", tab[i]);
-		i++;
-	}
-}
-
-/*---------------------------------------------*/
-
 int	parsing(char **argv)
 {
-	int	i;
-	char *str;
-	char **tab;
+	int			i;
+	char		**tab;
+	long int	*tab_long;
 
-	i = 0;
-	str = NULL;
-	while (argv[i])
-		str = ft_strjoin(str, argv[i++]);
-	tab = ft_split(str, ' ');
-	free(str);
+	tab = transform_tab(argv);
+	tab_long = transform_tab_long(argv);
 	i = 0;
 	while (tab[i])
 	{
+		if (tab_long[i] < -2147483648 || tab_long[i] > 2147483647)
+		{
+			free(tab_long);
+			exit_error(tab);
+		}
 		if (ft_strlen(tab[i]) > 11)
-			print_error(tab);
+			exit_error(tab);
 		if (is_digit(tab[i]))
-			print_error(tab);
+			exit_error(tab);
 		i++;
 	}
 	is_doublon(tab);
