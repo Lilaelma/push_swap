@@ -4,6 +4,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# include <stdio.h> /////////////////////////////////
+
 typedef struct s_stack
 {
 	int				value;
@@ -15,7 +17,7 @@ typedef struct s_stack
 char		**transform_tab(char **argv);
 
 /*------- parsing.c -----------*/
-long int	*transform_tab_long(char **argv);
+long long int	*transform_tab_long(char **argv);
 int			is_digit(char *digit);
 void		is_doublon(char **argv);
 int			parsing(char **argv);
@@ -64,12 +66,12 @@ t_stack		*ft_last_lst(t_stack *stack);
 /*-------- utils.c ------------*/
 int			ft_strcmp(char *s1, char *s2);
 int			ft_strlen(char *str);
-long int	ft_atol(char *str);
+long long int	ft_atol(char *str);
 int			*trans_to_int(char **argv, int len_tab);
 char		*ft_strjoin(char *s1, char *s2);
 
 /*-------- utils_bis.c --------*/
-void		*free_tab(char **tab);
+void		free_tab(char **tab);
 int			get_nb_word(char const *s, char c);
 char		*take_word(const char *s, char c);
 char		**test_protect(char const *s, char c);
@@ -80,6 +82,7 @@ int			ft_len_tab(char **tab);
 int			ft_atoi(char *str);
 
 /*-------- error.c ------------*/
+void		ft_error(void);
 void		exit_error(char **tab);
 
 #endif

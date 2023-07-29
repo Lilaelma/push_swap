@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	*free_tab(char **tab)
+void	free_tab(char **tab)
 {
 	int	i;
 
@@ -11,7 +11,7 @@ void	*free_tab(char **tab)
 		i++;
 	}
 	free(tab);
-	return (NULL);
+	return ;
 }
 
 int	get_nb_word(char const *s, char c)
@@ -87,7 +87,7 @@ char	**ft_split(char *s, char c)
 	{
 		tab[j] = take_word(&s[i], c);
 		if (!tab[j])
-			return (free_tab(tab));
+			return (free_tab(tab), NULL);
 		while (s[i] != c && s[i])
 			i++;
 		while (s[i] && s[i] == c)

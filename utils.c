@@ -22,11 +22,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-long int	ft_atol(char *str)
+long long int	ft_atol(char *str)
 {
-	long int	res;
-	int			sign;
-	int			i;
+	long long int	res;
+	long long int	sign;
+	long long int	i;
 
 	i = 0;
 	res = 0;
@@ -43,6 +43,8 @@ long int	ft_atol(char *str)
 			sign *= -1;
 		i++;
 	}
+	while (str[i] == '0')
+		i++;
 	while ('0' <= str[i] && str[i] <= '9')
 		res = (res * 10) + (str[i++] - '0');
 	return (sign * res);
