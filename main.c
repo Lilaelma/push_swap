@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 20:46:37 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/29 20:46:53 by aclarenn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
-char	**transform_tab(char **argv)
+char **transform_tab(char **argv)
 {
 	char	**tab;
 	char	*str;
@@ -36,7 +24,9 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 	char	**tab;
 
-	if (argc == 1 || parsing(argv + 1) == 0)
+	if (argc == 1)
+		return (0);
+	if (parsing(argv + 1) == 0)
 		ft_error();
 	a = NULL;
 	b = NULL;
@@ -44,7 +34,7 @@ int	main(int argc, char **argv)
 	a = put_in_a(a, tab);
 	put_index_in_a(a, tab, ft_len_tab(tab));
 	if (stack_is_sorted(a))
-		return (free_tab(tab), clear_list(a), ft_error(), 0);
+		return (free_tab(tab), clear_list(a), 0);
 	manage_sort(&a, &b, ft_len_tab(tab));
 	free_tab(tab);
 	clear_list(a);

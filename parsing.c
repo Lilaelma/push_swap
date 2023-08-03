@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 20:47:17 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/07/29 20:48:03 by aclarenn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 long long int	*transform_tab_long(char **argv)
@@ -85,8 +73,7 @@ int	parsing(char **argv)
 	{
 		if (ft_atol(tab[i]) != tab_long[i] && ft_strlen(tab[i]) > 11)
 			return (free(tab_long), exit_error(tab), 0);
-		if ((tab_long[i] < -2147483648 || tab_long[i] > 2147483647) 
-			&& ft_strlen(tab[i]) > 11)
+		if ((tab_long[i] < -2147483648 || tab_long[i] > 2147483647) && ft_strlen(tab[i]) > 11)
 			return (free(tab_long), exit_error(tab), 0);
 		if (is_digit(tab[i]))
 			return (free(tab_long), exit_error(tab), 0);
