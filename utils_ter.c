@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_ter.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 09:59:33 by aclarenn          #+#    #+#             */
+/*   Updated: 2023/08/03 10:03:24 by aclarenn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_len_tab(char **tab)
@@ -12,7 +24,7 @@ int	ft_len_tab(char **tab)
 
 int	ft_atoi(char *str)
 {
-	int	res;
+	int			res;
 	int			sign;
 	int			i;
 

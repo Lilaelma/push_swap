@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 09:58:45 by aclarenn          #+#    #+#             */
+/*   Updated: 2023/08/03 10:04:04 by aclarenn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 long long int	*transform_tab_long(char **argv)
@@ -39,7 +51,7 @@ int	is_digit(char *digit)
 	return (0);
 }
 
-void	is_doublon(char **argv)
+void	is_doublon(char **argv, long long int *tab_long)
 {
 	int	i;
 	int	j;
@@ -51,7 +63,7 @@ void	is_doublon(char **argv)
 		while (argv[j])
 		{
 			if (!ft_strcmp(argv[i], argv[j]))
-				exit_error(argv);
+				return (free(tab_long), exit_error(argv));
 			j++;
 		}
 		i++;
@@ -73,13 +85,14 @@ int	parsing(char **argv)
 	{
 		if (ft_atol(tab[i]) != tab_long[i] && ft_strlen(tab[i]) > 11)
 			return (free(tab_long), exit_error(tab), 0);
-		if ((tab_long[i] < -2147483648 || tab_long[i] > 2147483647) && ft_strlen(tab[i]) > 11)
+		if ((tab_long[i] < -2147483648 || tab_long[i] > 2147483647) 
+			&& ft_strlen(tab[i]) > 11)
 			return (free(tab_long), exit_error(tab), 0);
 		if (is_digit(tab[i]))
 			return (free(tab_long), exit_error(tab), 0);
 		i++;
 	}
-	is_doublon(tab);
+	is_doublon(tab, tab_long);
 	free(tab_long);
 	free_tab(tab);
 	return (1);
