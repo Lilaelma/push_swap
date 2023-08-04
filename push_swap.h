@@ -6,7 +6,7 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 09:58:51 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/08/03 10:01:49 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/08/04 10:53:13 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void			five_sort(t_stack **a, t_stack **b, int argc);
 void			manage_sort(t_stack **a, t_stack **b, int argc);
 
 /*---------- stack.c ----------*/
-t_stack			*push_front(t_stack *stack, int value);
 t_stack			*push_back(t_stack *stack, int value);
 t_stack			*put_in_a(t_stack *a, char **argv);
 void			put_index_in_a(t_stack *a, char **argv, int len_tab);

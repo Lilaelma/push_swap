@@ -6,23 +6,11 @@
 /*   By: aclarenn <aclarenn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 09:59:19 by aclarenn          #+#    #+#             */
-/*   Updated: 2023/08/03 09:59:20 by aclarenn         ###   ########.fr       */
+/*   Updated: 2023/08/04 10:53:09 by aclarenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*push_front(t_stack *stack, int value)
-{
-	t_stack	*element;
-
-	element = malloc(sizeof(*element));
-	if (!element)
-		exit(1);
-	element->value = value;
-	element->next = stack;
-	return (element);
-}
 
 t_stack	*push_back(t_stack *stack, int value)
 {

@@ -7,7 +7,7 @@ SRCS = main.c\
 	   quick_sort.c\
 	   short_sort.c\
 	   radix.c\
-	   sorting.c\
+	   manage.c\
 	   lst_utils.c\
 	   utils.c\
 	   utils_bis.c\
